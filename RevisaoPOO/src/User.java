@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class User {
@@ -12,6 +13,23 @@ public class User {
 		friends.add("Rosana");
 	}
 	
+	public void addFriend(String name) {
+		friends.add(name);
+	}
+	
+	public List<String> getFriends() {
+		List<String> friendsCopy = new ArrayList<>();
+		for(String friendName : this.friends) {
+			friendsCopy.add(friendName);
+		}
+		
+		return friendsCopy;
+	}
+
+	public void setFriends(List<String> friends) {
+		this.friends = friends;
+	}
+
 	public String getNome() {
 		return nome;
 	}
