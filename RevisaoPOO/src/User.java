@@ -1,53 +1,35 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class User {
-	private String nome;
-	private String cpf;
-	private List<String> friends;
 	
-	public User() {
-		friends = new ArrayList<>();
-		friends.add("Luiza");
-		friends.add("Rosana");
-	}
+	private int id;
+	private String name;
+	private String birthDate;
 	
-	public void addFriend(String name) {
-		friends.add(name);
+	public User(int id) {
+		this.id = id;
 	}
 	
-	public List<String> getFriends() {
-		List<String> friendsCopy = new ArrayList<>();
-		for(String friendName : this.friends) {
-			friendsCopy.add(friendName);
-		}
-		
-		return friendsCopy;
+	public int getId() {
+		return id;
 	}
-
-	public void setFriends(List<String> friends) {
-		this.friends = friends;
+	public void setId(int id) {
+		this.id = id;
 	}
-
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
 	}
 	
-	public String getCpf() {
-		return cpf;
-	}
-	
-	public void setCpf(String cpf) {
-		if(cpf == null || cpf.equals("")) {
-			return;
-		}else {
-			this.cpf = cpf;
-		}
+	public String formatPersonalData() {
+		// return "ID: " + this.id + " Nome: " + this.name;
+		return String.format("ID: %d\nNome: %s", this.id, this.name);
 	}
 	
 }
