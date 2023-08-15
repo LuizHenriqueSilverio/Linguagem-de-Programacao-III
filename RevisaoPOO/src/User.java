@@ -29,7 +29,7 @@ public abstract class User {
 	
 	public String formatPersonalData() {
 		// return "ID: " + this.id + " Nome: " + this.name;
-		return String.format("ID: %d\nNome: %s", this.id, this.name);
+		return String.format("ID: %d\nNome: %s\n", this.id, this.name);
 	}
 	
 }
