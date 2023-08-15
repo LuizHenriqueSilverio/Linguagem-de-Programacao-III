@@ -2,14 +2,20 @@
 public class Main {
 
 	public static void main(String[] args) {
-		User emerson = new User();
-		emerson.setNome("Emerson");
-		emerson.setCpf("123.456.789-10");
+		Student maria = new Student(1, 999);
+		maria.setName("Maria");
+		maria.setBirthDate("11/06/2000");
+		maria.setCourse("Sistemas de Informação");
+		maria.setSemester((short) 4);
 		
-		System.out.println("Lista de amigos: ");
-		for (String friendName : emerson.getFriends()) {
-			System.out.println(friendName);
-		}
+		Student jose = new Student(2, 888);
+		jose.setName("José");
+		jose.setBirthDate("14/07/2001");
+		jose.setCourse("Sistemas de Informação");
+		jose.setSemester((short) 8);
+		
+		System.out.println(maria.toString() + " " + maria.formatPersonalData());
+		System.out.println(jose.toString() + " " + jose.formatPersonalData());
 	}
 
 }

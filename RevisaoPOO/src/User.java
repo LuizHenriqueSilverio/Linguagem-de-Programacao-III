@@ -1,11 +1,13 @@
-public class User {
+public abstract class User {
 	
 	private int id;
 	private String name;
 	private String birthDate;
 	
-	public User(int id) {
-		this.id = id;
+	public User(int id) throws Exception{
+		if(id <= 0) {
+			throw new Exception("ID está invalido!");
+		}
 	}
 	
 	public int getId() {
