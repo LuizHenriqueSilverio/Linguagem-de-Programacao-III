@@ -30,5 +30,7 @@ public class Student extends User{
 		return enrollment;
 	}
 	
-	
+	public String formatPersonalData() {
+		return "";
+	}
 }
