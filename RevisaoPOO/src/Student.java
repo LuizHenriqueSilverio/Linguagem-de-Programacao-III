@@ -30,7 +30,10 @@ public class Student extends User{
 		return enrollment;
 	}
 	
+	@Override
 	public String formatPersonalData() {
-		return "";
+		String userData = String.format("ID: %d\nNome: %s\n", getId(), getName());
+		String studentData = String.format("RA: %s\nCurso: %s\nPeriodo: %d", this.enrollment, this.course, this.semester);
+		return userData + studentData;
 	}
 }
