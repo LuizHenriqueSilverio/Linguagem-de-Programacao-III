@@ -5,7 +5,7 @@ public class Student extends User{
 	private String course;
 	private short semester;
 	
-	public Student(int id, int enrollment) {
+	public Student(int id, int enrollment){
 		super(id);
 		this.enrollment = enrollment;
 	}
@@ -32,7 +32,7 @@ public class Student extends User{
 	
 	@Override
 	public String formatPersonalData() {
-		String userData = String.format("ID: %d\nNome: %s\n", getId(), getName());
+		String userData = super.formatPersonalData();
 		String studentData = String.format("RA: %s\nCurso: %s\nPeriodo: %d", this.enrollment, this.course, this.semester);
 		return userData + studentData;
 	}
