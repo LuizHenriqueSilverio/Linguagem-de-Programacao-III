@@ -1,5 +1,9 @@
 
 public class Main {
+	
+	private static void printUserData(User user) {
+		System.out.println(user.formatPersonalData() + "\n");
+	}
 
 	public static void main(String[] args) {
 		Student maria = new Student(1, 999);
@@ -18,9 +22,9 @@ public class Main {
 		ju.setArea("TI");
 		ju.setRole("Técnina em Laboratório");
 		
-		System.out.println(maria.formatPersonalData() + "\n");
-		System.out.println(emerson.formatPersonalData() + "\n");
-		System.out.println(ju.formatPersonalData() + "\n");
+		printUserData(maria);
+		printUserData(emerson);
+		printUserData(ju);
 	}
 
 }
