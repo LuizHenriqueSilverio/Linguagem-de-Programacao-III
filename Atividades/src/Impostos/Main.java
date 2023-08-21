@@ -7,27 +7,52 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		
-		
-		List<Imposto> impostos = new ArrayList<>();
-		
-		impostos.add(new Imposto("Confins", 0.12));
-		impostos.add(new Imposto("ICMS", 0.07));
-		impostos.add(new Imposto("ISS", 0.05));
-        impostos.add(new Imposto("IPI", 0.08));
-        impostos.add(new Imposto("Cide", 0.1));
-        impostos.add(new Imposto("CSLL", 0.04));
+		Imposto icms = new Imposto("ICMS", 0.07);
+		Imposto confins = new Imposto("Confins", 0.12);
+		Imposto ipi = new Imposto("IPI", 0.08);
+		Imposto iss = new Imposto("ISS", 0.05);
+		Imposto cide = new Imposto("Cide", 0.10);
+		Imposto csll = new Imposto("CSLL", 0.04);
         
         List<Produto> prod = new ArrayList<>();
         
-        prod.add(new Produto("Arroz", 7.00, new ArrayList<>(impostos.subList(0, 3)), 0.20));
-        prod.add(new Produto("Feijão", 7.00, new ArrayList<>(impostos.subList(0, 3)), 0.25));
-        prod.add(new Produto("Carne", 7.00, new ArrayList<>(impostos.subList(1, 3)), 0.35));
-        prod.add(new Produto("Cerveja", 7.00, new ArrayList<>(impostos.subList(1, 5)), 0.30));
-        prod.add(new Produto("Gás", 7.00, new ArrayList<>(impostos.subList(1, 3)), 0.15));
-        prod.add(new Produto("Gasolina", 7.00, new ArrayList<>(impostos.subList(1, 5)), 0.15));
+        Produto arroz = new Produto("Arroz", 7.00, 0.20);
+        arroz.insereImposto(icms);
+        arroz.insereImposto(confins);
+        arroz.insereImposto(iss);
         
+        Produto feijao = new Produto("Feijão", 7.00, 0.25);
+        feijao.insereImposto(icms);
+        feijao.insereImposto(confins);
+        feijao.insereImposto(iss);
         
+        Produto carne = new Produto("Carne", 7.00, 0.35);
+        carne.insereImposto(confins);
+        carne.insereImposto(icms);
+        carne.insereImposto(ipi);
+        
+        Produto cerveja = new Produto("Cerveja", 7.00, 0.30);
+        cerveja.insereImposto(confins);
+        cerveja.insereImposto(icms);
+        cerveja.insereImposto(iss);
+        cerveja.insereImposto(ipi);
+        
+        Produto gas = new Produto("Gás", 7.00, 0.15);
+        gas.insereImposto(confins);
+        gas.insereImposto(icms);
+        gas.insereImposto(ipi);
+        
+        Produto gasolina = new Produto("Gasolina", 7.00, 0.15);
+        gasolina.insereImposto(confins);
+        gasolina.insereImposto(icms);
+        gasolina.insereImposto(cide);
+        
+        prod.add(arroz);
+        prod.add(feijao);
+        prod.add(carne);
+        prod.add(cerveja);
+        prod.add(gas);
+        prod.add(gasolina);
         
         for(Produto produto : prod) {
         	double precoVenda = produto.calcularPrecoVenda();

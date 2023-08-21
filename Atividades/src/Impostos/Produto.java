@@ -9,10 +9,10 @@ public class Produto {
 	private List<Imposto> impostos; 
 	private double margemLucro;
 	
-	public Produto(String nome, double precoCusto, List<Imposto> impostos, double margemLucro) {
+	public Produto(String nome, double precoCusto, double margemLucro) {
 		this.nome = nome;
 		this.precoCusto = precoCusto;
-		this.impostos = new ArrayList<>(impostos);
+		this.impostos = new ArrayList<>();
 		this.margemLucro = margemLucro;
 	}
 
@@ -48,14 +48,21 @@ public class Produto {
 		this.margemLucro = margemLucro;
 	}
 	
+	public void insereImposto(Imposto imposto) {
+		impostos.add(imposto);
+	}
+	
 	public double calcularPrecoVenda() {
-		double precoImpostos = 0;
+		double precoImpostos = 0.0;
 		
 		for(Imposto imposto : impostos) {
 			precoImpostos += precoCusto * imposto.getPorcentagem();
 		}
-		double precoLucro = precoCusto * margemLucro;
-		return this.precoCusto + precoImpostos + precoLucro;
+		
+		double precoMargem = precoCusto + precoImpostos;
+		double precoFinal = precoMargem + (precoMargem * this.margemLucro);
+		
+		return precoFinal;
 	}
 	
 	public String imprimirImpostos() {
