@@ -8,14 +8,19 @@ public class Main {
 		maria.setCourse("Sistemas de Informação");
 		maria.setSemester((short) 4);
 		
-		Student jose = new Student(2, 888);
-		jose.setName("José");
-		jose.setBirthDate("14/07/2001");
-		jose.setCourse("Sistemas de Informação");
-		jose.setSemester((short) 8);
+		Professor emerson = new Professor(2, "21");
+		emerson.setName("Emerson");
+		emerson.setLevel("Doutor");
+		emerson.setArea("Informática");
 		
-		System.out.println(maria.toString() + " " + maria.formatPersonalData());
-		System.out.println(jose.toString() + " " + jose.formatPersonalData());
+		AT ju = new AT(3, "891");
+		ju.setName("Julia");
+		ju.setArea("TI");
+		ju.setRole("Técnina em Laboratório");
+		
+		System.out.println(maria.formatPersonalData() + "\n");
+		System.out.println(emerson.formatPersonalData() + "\n");
+		System.out.println(ju.formatPersonalData() + "\n");
 	}
 
 }
