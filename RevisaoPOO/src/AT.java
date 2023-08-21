@@ -38,5 +38,10 @@ public class AT extends User{
 		return siape;
 	}
 	
-	
+	@Override
+	public String formatPersonalData() {
+		String userData = super.formatPersonalData();
+		String taData = String.format("Siape: %s\nNível: %s\nFunção: %s", siape, level, role);
+		return userData + taData;
+	}
 }
