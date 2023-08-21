@@ -29,5 +29,10 @@ public class Professor extends User{
 		return siape;
 	}
 	
-	
+	@Override
+	public String formatPersonalData() {
+		String userData = super.formatPersonalData();
+		String professorData = String.format("Siape: %s\nNível: %s\nÁrea: %s", siape, level, area);
+		return userData + professorData;
+	}
 }
