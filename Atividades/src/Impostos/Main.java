@@ -20,6 +20,7 @@ public class Main {
         arroz.insereImposto(icms);
         arroz.insereImposto(confins);
         arroz.insereImposto(iss);
+        //arroz.removeImposto(icms);
         
         Produto feijao = new Produto("Feijão", 7.00, 0.25);
         feijao.insereImposto(icms);

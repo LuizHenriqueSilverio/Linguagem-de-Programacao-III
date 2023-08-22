@@ -52,6 +52,10 @@ public class Produto {
 		impostos.add(imposto);
 	}
 	
+	public void removeImposto(Imposto imposto) {
+		impostos.remove(imposto);
+	}
+	
 	public double calcularPrecoVenda() {
 		double precoImpostos = 0.0;
 		
