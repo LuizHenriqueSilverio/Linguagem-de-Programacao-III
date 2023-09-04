@@ -6,6 +6,7 @@ public class Tax {
 	private double aliquot;
 	
 	public Tax(String abbr, String name, double aliquot) {
+		//TODO validar todos os atributos
 		this.abbr = abbr;
 		this.name = name;
 		setAliquot(aliquot);
