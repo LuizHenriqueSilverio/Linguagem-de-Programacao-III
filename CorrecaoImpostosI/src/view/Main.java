@@ -1,6 +1,7 @@
 package view;
 
 import model.Tax;
+import model.Product;
 
 public class Main {
 
