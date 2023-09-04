@@ -13,6 +13,7 @@ public class Main {
 		Imposto iss = new Imposto("ISS", 0.05);
 		Imposto cide = new Imposto("Cide", 0.10);
 		Imposto csll = new Imposto("CSLL", 0.04);
+		
         
         List<Produto> prod = new ArrayList<>();
         
@@ -59,6 +60,7 @@ public class Main {
         	double precoVenda = produto.calcularPrecoVenda();
         	produto.imprimeDadosProduto(precoVenda);
         }
+        
 	}
 
 }
