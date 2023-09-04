@@ -12,12 +12,29 @@ public class Tax {
 		setAliquot(aliquot);
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) {
+			return false;
+		}
+		
+		if(!(obj instanceof Tax)) {
+			return false;
+		}
+		
+		Tax tax = (Tax) obj;
+		
+		return this.abbr.equals(tax.abbr);
+		
+	}
+	
+
 	public double calculate() {
 		//TODO implementar calculo do imposto
 		return 0;
 	}
 
-	private void setAliquot(double aliquot) {
+	public void setAliquot(double aliquot) {
 		this.aliquot = aliquot / 100;
 	}
 }
