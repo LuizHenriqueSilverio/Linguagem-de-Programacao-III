@@ -29,9 +29,8 @@ public class Tax {
 	}
 	
 
-	public double calculate() {
-		//TODO implementar calculo do imposto
-		return 0;
+	public double calculate(Product p) {
+		return p.getCostPrice() * aliquot;
 	}
 
 	public void setAliquot(double aliquot) {

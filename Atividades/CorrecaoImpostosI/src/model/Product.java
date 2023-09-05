@@ -16,6 +16,14 @@ public class Product {
 		this.taxes = new ArrayList<>();
 	}
 	
+	public double getCostPrice() {
+		return this.costPrice;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
 	public boolean addTax(Tax tax) throws Exception{
 		
 		if(tax == null) {
@@ -29,6 +37,20 @@ public class Product {
 		}
 		
 		return true;
+	}
+	
+	public double calculateSalePrice() {
+		double taxesSum = 0;
+		
+		for(Tax tax : taxes) {
+			taxesSum += tax.calculate(this);
+		}
+		
+		double finalCost = costPrice + taxesSum;
+		
+		double finalPrice = finalCost + (finalCost * profit);
+		
+		return finalPrice;
 	}
 
 	private void setProfit(double profit) throws Exception{
