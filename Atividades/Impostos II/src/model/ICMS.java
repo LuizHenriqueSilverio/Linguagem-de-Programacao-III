@@ -3,7 +3,7 @@ package model;
 public class ICMS extends Tax{
 
 	public ICMS() {
-		super("ICMS", "Imposto Circ. Mercadorias", 7);
+		super("ICMS", "Imposto Circ. Mercadorias", 0);
 	}
 	
 	public void setAliquot(Product product) {
@@ -12,6 +12,12 @@ public class ICMS extends Tax{
 		}else {
 			setAliquot(7);
 		}
+	}
+	
+	@Override
+	public double calculate(Product p) {
+		setAliquot(p);
+		return p.getCostPrice() * this.getAliquot();
 	}
 	
 }

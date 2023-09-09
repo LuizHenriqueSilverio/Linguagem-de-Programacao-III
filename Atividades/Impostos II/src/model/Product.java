@@ -10,10 +10,11 @@ public class Product {
 	private List<Tax> taxes;
 	private boolean isNational;
 	
-	public Product(String name, double costPrice, double profit) throws Exception {
+	public Product(String name, double costPrice, double profit, boolean isNational) throws Exception {
 		setName(name);
 		setCostPrice(costPrice);
 		setProfit(profit);
+		setNational(isNational);
 		this.taxes = new ArrayList<>();
 	}
 	
@@ -36,6 +37,10 @@ public class Product {
 	
 	public String getName() {
 		return this.name;
+	}
+	
+	public double getProfit() {
+		return this.profit;
 	}
 	
 	public boolean addTax(Tax tax) throws Exception{
@@ -86,5 +91,9 @@ public class Product {
 			throw new Exception("Nome inválido.");
 		}
 		this.name = name;
+	}
+	
+	private void setNational(boolean isNational){
+		this.isNational = isNational;
 	}
 }
