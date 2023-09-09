@@ -8,9 +8,9 @@ public class ICMS extends Tax{
 	
 	public void setAliquot(Product product) {
 		if(product.hasIpi()) {
-			setAliquot(5);
-		}else {
 			setAliquot(7);
+		}else {
+			setAliquot(5);
 		}
 	}
 	
