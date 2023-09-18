@@ -8,10 +8,12 @@ public class Product {
 	private double costPrice;
 	private double profit;
 	private boolean foreign;
+	private boolean industrial;
 	private List<Tax> taxes;
 	
 	public Product(String name, double costPrice, double profit) throws Exception {
 		this.foreign = false;
+		this.industrial = false;
 		setName(name);
 		setCostPrice(costPrice);
 		setProfit(profit);
@@ -24,6 +26,14 @@ public class Product {
 	
 	public String getName() {
 		return this.name;
+	}
+	
+	public void setIndustrial(boolean industrial) {
+		this.industrial = industrial;
+	}
+	
+	public boolean isIndustrial() {
+		return this.industrial;
 	}
 	
 	public void setIsForeign(boolean isForeign) {

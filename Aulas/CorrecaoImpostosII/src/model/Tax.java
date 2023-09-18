@@ -38,5 +38,5 @@ public abstract class Tax {
 		return aliquot;
 	}
 	
-	public abstract void defineAliquot(Product p);
+	protected abstract void defineAliquot(Product p);
 }
