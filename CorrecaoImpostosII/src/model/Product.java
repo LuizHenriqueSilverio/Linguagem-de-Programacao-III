@@ -7,9 +7,11 @@ public class Product {
 	private String name;
 	private double costPrice;
 	private double profit;
+	private boolean foreign;
 	private List<Tax> taxes;
 	
 	public Product(String name, double costPrice, double profit) throws Exception {
+		this.foreign = false;
 		setName(name);
 		setCostPrice(costPrice);
 		setProfit(profit);
@@ -22,6 +24,14 @@ public class Product {
 	
 	public String getName() {
 		return this.name;
+	}
+	
+	public void setIsForeign(boolean isForeign) {
+		this.foreign = isForeign;
+	}
+	
+	public boolean isForeign() {
+		return this.foreign;
 	}
 	
 	public boolean addTax(Tax tax) throws Exception{

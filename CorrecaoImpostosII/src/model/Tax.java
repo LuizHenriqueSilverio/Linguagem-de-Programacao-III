@@ -5,11 +5,10 @@ public abstract class Tax {
 	private String name;
 	private double aliquot;
 	
-	public Tax(String abbr, String name, double aliquot) {
+	public Tax(String abbr, String name) {
 		//TODO validar todos os atributos
 		this.abbr = abbr;
 		this.name = name;
-		setAliquot(aliquot);
 	}
 	
 	@Override
@@ -34,4 +33,6 @@ public abstract class Tax {
 	public void setAliquot(double aliquot) {
 		this.aliquot = aliquot / 100;
 	}
+	
+	public abstract void defineAliquot(Product p);
 }
