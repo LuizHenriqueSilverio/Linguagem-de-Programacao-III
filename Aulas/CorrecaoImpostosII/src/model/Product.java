@@ -80,6 +80,10 @@ public class Product {
 		}
 		this.profit = profit / 100;
 	}
+	
+	protected double getProfit() {
+		return this.profit;
+	}
 
 	private void setCostPrice(double costPrice) throws Exception{
 		if(costPrice <= 0) {
