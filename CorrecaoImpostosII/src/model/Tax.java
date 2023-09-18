@@ -28,9 +28,9 @@ public abstract class Tax {
 	}
 	
 
-	public abstract double calculate(Product p);
+	protected abstract double calculate(Product p);
 
-	public void setAliquot(double aliquot) {
+	protected void setAliquot(double aliquot) {
 		this.aliquot = aliquot / 100;
 	}
 	

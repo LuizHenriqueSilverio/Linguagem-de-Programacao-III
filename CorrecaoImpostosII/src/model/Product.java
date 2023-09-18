@@ -43,6 +43,7 @@ public class Product {
 		if(taxes.contains(tax)) {
 			return false;
 		}else {
+			tax.defineAliquot(this);
 			taxes.add(tax);
 		}
 		
