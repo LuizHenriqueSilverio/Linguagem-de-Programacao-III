@@ -16,10 +16,17 @@ public class Main {
 		
 		arroz.addTax(ipi);
 		arroz.addTax(icms);
-		// Tax icms = new Tax("ICMS", "Imposto Circ. Mercadorias", 7);
+		
+		Product extratoTomate = new Product("Extrato Heinz", 7, 25);
+		extratoTomate.setIndustrial(true);
+		extratoTomate.setIsForeign(true);
+		
+		Tax ipiTomate = new IPI();
+		
+		extratoTomate.addTax(ipiTomate);
 		
 		System.out.println(arroz.getName() + ", " + String.format("R$%.2f", arroz.calculateSalePrice()));
-
+		System.out.println(extratoTomate.getName() + ", " + String.format("R$%.2f", extratoTomate.calculateSalePrice()));
 	}
 
 }
