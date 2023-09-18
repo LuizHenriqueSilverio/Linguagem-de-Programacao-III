@@ -12,8 +12,8 @@ public class IPI extends Tax{
 
 	@Override
 	public double calculate(Product p) {
-		
-		return 0;
+		double ipiCost = p.getCostPrice() * this.getAliquot();
+		return ipiCost;
 	}
 
 	@Override
