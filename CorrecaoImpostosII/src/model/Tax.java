@@ -29,9 +29,7 @@ public abstract class Tax {
 	}
 	
 
-	public double calculate(Product p) {
-		return p.getCostPrice() * aliquot;
-	}
+	public abstract double calculate(Product p);
 
 	public void setAliquot(double aliquot) {
 		this.aliquot = aliquot / 100;
