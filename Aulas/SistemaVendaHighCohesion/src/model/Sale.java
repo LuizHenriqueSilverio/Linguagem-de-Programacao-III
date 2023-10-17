@@ -38,8 +38,16 @@ public class Sale {
 		this.items.add(item);
 	}
 	
-	public void addPaymentMethod(PaymentMethod paymentMethod) {
-		this.paymentMethod = paymentMethod;
+	public void addPaymentMethod(String paymentMethod) {
+		this.paymentMethod = DataBase.getPayment(paymentMethod); 
+	}
+	
+	public String getPaymentMethod() {
+		return this.paymentMethod.description();
+	}
+	
+	public double getPaymentValue() {
+		return this.paymentMethod.value(this.getTotal());
 	}
 	
 	public double getTotal() {
@@ -50,7 +58,6 @@ public class Sale {
 			total += saleItem.getSaleItemSubTotal();
 		}
 		
-		total = paymentMethod.calculate(total);
 		
 		return total;
 	}

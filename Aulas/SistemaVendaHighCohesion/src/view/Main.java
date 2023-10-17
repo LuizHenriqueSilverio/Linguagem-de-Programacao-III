@@ -2,10 +2,6 @@ package view;
 
 
 import model.Sale;
-import model.PaymentMethod;
-import model.CreditCard;
-import model.DebitCard;
-import model.Money;
 
 public class Main {
 
@@ -15,6 +11,9 @@ public class Main {
 		sale.addItem("arroz", 3);
 		sale.addItem("feijao", 2);
 		sale.addItem("sal", 1);
+		//sale.addPaymentMethod("cc");
+		//sale.addPaymentMethod("dc");
+		sale.addPaymentMethod("c");
 		
 		System.out.println(String.format("Venda - #1234 - %s", sale.getDate().toLocaleString()) );
 		
@@ -22,13 +21,10 @@ public class Main {
 			System.out.println(si);
 		}
 		
-		// PaymentMethod payment = new CreditCard();
-		//PaymentMethod payment = new DebitCard();
-		PaymentMethod payment = new Money();
-		
-		sale.addPaymentMethod(payment);
 		
 		System.out.println(String.format("Total: R$%.2f", sale.getTotal()));
+		System.out.println("Forma de pagamento: " + sale.getPaymentMethod());
+		System.out.println(String.format("Valor a ser pago: R$%.2f", sale.getPaymentValue()));
 	}
 
 }
