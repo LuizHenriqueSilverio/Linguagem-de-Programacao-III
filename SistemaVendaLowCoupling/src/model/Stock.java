@@ -11,20 +11,29 @@ public class Stock {
 		stockItems = DataBase.getStockItem();
 	}
 	
-//	public void addStockItem(String product, double amount) {
-//		String[] itemString = DataBase.getProductDescription(product);
-//		Product stockProduct = new Product(itemString[0].toString(), Double.parseDouble(itemString[1]));
-//		
-//		StockItem stockItem = new StockItem(stockProduct, amount);
-//		this.stockItems.add(stockItem);
-//	}
-//	
-//	public void decreaseAmount(String product) {
-//		for(StockItem si : stockItems) {
-//			if(si.getProduct().getDescription() == product) {
-//				si.setAmount(si.getAmount() - 1);
-//				break;
-//			}
-//		}
-//	}
+	public boolean hasAmount(String codeProd, int amount) {
+		Product p = DataBase.getProduct(codeProd);
+		
+		
+		for(StockItem stockItem : stockItems) {
+			Product pInStock = stockItem.getProduct();
+			if(p.getDescription().equals(pInStock.getDescription())) {
+				return stockItem.getAmount() >= amount;
+			}
+		}
+		
+		return false;
+	}
+	
+	public void removeFromStock(String codeProd, int amount) {
+		Product p = DataBase.getProduct(codeProd);
+		
+		
+		for(StockItem stockItem : stockItems) {
+			Product pInStock = stockItem.getProduct();
+			if(p.getDescription().equals(pInStock.getDescription())) {
+				stockItem.removeFromStock();
+			}
+		}
+	}
 }

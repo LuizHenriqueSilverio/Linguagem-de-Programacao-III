@@ -3,11 +3,11 @@ package model;
 public class StockItem {
 	
 	private Product product;
-	private double amount;
+	private int amount;
 	
-	public StockItem(Product product, double quantity) {
+	public StockItem(Product product, int amount) {
 		this.product = product;
-		this.amount = quantity;
+		this.amount = amount;
 	}
 	
 	public Product getProduct() {
@@ -18,7 +18,11 @@ public class StockItem {
 		return this.amount;
 	}
 	
-	public void setAmount(double amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	
+	public void removeFromStock(int amount) {
+		this.amount -= amount;
 	}
 }

@@ -31,7 +31,7 @@ public class DataBase {
 	public static List<StockItem> getStockItem() {
 		List<StockItem> items = new ArrayList<>();
 		
-		for(StockItem stockItem : this.stockItems.values()) {
+		for(StockItem stockItem : DataBase.stockItems.values()) {
 			items.add(stockItem);
 		}
 		
@@ -40,6 +40,17 @@ public class DataBase {
 	
 	public static String[] getProductDescription(String key) {
 		return products.get(key);
+	}
+	
+	public static Product getProduct(String key) {
+		String[] dataProduct = products.get(key);
+		
+		if(dataProduct != null) {
+			Product p = new Product(dataProduct[0], Integer.parseInt(dataProduct[1]));
+			return p;
+		}
+		
+		return null;
 	}
 	
 	public static PaymentMethod getPayment(String key) {

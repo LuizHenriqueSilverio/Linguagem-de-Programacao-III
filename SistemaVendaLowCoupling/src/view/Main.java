@@ -1,16 +1,17 @@
 package view;
 
 
-import model.Sale;
+import model.SaleManager;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Sale sale = new Sale();
+		SaleManager manager = new SaleManager();
+		manager.openSale();
 		
-		sale.addItem("arroz", 3);
-		sale.addItem("feijao", 2);
-		sale.addItem("sal", 1);
+		manager.addItem("arroz", 3);
+		manager.addItem("feijao", 2);
+		manager.addItem("sal", 1);
 		//sale.addPaymentMethod("cc");
 		//sale.addPaymentMethod("dc");
 		sale.addPaymentMethod("c");
