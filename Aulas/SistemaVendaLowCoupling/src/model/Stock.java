@@ -32,7 +32,8 @@ public class Stock {
 		for(StockItem stockItem : stockItems) {
 			Product pInStock = stockItem.getProduct();
 			if(p.getDescription().equals(pInStock.getDescription())) {
-				stockItem.removeFromStock();
+				stockItem.removeFromStock(amount);
+				break;
 			}
 		}
 	}

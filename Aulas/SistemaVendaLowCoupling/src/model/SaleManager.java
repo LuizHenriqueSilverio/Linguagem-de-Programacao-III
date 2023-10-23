@@ -32,4 +32,10 @@ public class SaleManager {
 		}
 		return false;
 	}
+	
+	public void addPayment(String payment) {
+		if(isOpen()) {
+			sale.addPaymentMethod(payment);
+		}
+	}
 }

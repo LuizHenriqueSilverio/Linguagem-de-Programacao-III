@@ -12,13 +12,13 @@ public class Main {
 		manager.addItem("arroz", 3);
 		manager.addItem("feijao", 2);
 		manager.addItem("sal", 1);
-		//sale.addPaymentMethod("cc");
-		//sale.addPaymentMethod("dc");
-		sale.addPaymentMethod("c");
+		//manager.addPayment("cc");
+		//manager.addPayment("dc");
+		manager.addPayment("c");
 		
-		System.out.println(String.format("Venda - #1234 - %s", sale.getDate().toLocaleString()) );
+		System.out.println(String.format("Venda - #1234 - %s", manager.getDate().toLocaleString()) );
 		
-		for(String si : sale.getSaleItems()) {
+		for(String si : manager.getSaleItems()) {
 			System.out.println(si);
 		}
 		
