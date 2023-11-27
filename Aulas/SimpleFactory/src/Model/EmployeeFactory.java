@@ -15,7 +15,7 @@ public class EmployeeFactory {
 				return new Analyst(name, salary);
 				
 			case ARCHITECT:
-				return new Architect(name, salary, projects, 0);
+				return new Architect(name, salary, projects, percentual);
 			
 			case MANAGER:
 				return new Manager(name, salary, subs, percentual, projects, 0);

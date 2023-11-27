@@ -1,10 +1,15 @@
 package View;
 
+import Model.EmployeeFactory;
+import Model.EmployeeFactory.EmployeeType;
+import Model.Employee;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Employee e = EmployeeFactory.createEmployee(EmployeeType.MANAGER, "Emerson", 2000, 5, 8, 0);
+		
+		System.out.println(e);
 	}
 
 }
