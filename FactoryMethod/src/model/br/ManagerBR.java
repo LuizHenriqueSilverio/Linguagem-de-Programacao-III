@@ -4,13 +4,13 @@ import model.Employee;
 
 public class ManagerBR extends Employee{
 
-	public ManagerBR(String position) {
-		super(position);
+	public ManagerBR() {
+		super("Gerente Brasileiro");
 	}
 
 	@Override
 	public double calculateSalary() {
-		return 0;
+		return 15000.20;
 	}
 	
 }
