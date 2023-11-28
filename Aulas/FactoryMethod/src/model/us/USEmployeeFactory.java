@@ -1,17 +1,20 @@
-package model.br;
+package model.us;
 
 import model.Employee;
 import model.EmployeeFactory;
 import model.EmployeeType;
 
-public class BREmployeeFactory implements EmployeeFactory{
+public class USEmployeeFactory implements EmployeeFactory{
 
 	@Override
 	public Employee createEmployee(EmployeeType type) {
+		
+		if(type == null) { return null;}
+		
 		if(type == EmployeeType.MANAGER) {
-			return new ManagerBR();
+			return new ManagerUS();
 		}else if(type == EmployeeType.PROGRAMMER){
-			return new ProgrammerBR();
+			return new ProgrammerUS();
 		}
 		
 		return null;
