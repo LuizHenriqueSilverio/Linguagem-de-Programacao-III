@@ -19,11 +19,12 @@ public class JDBCTest {
 	public static void main(String[] args) {
 		selectExample();
 		
-		deleteExample();
+		//deleteExample(5);
 		
-		insertExample("Olá da Rosânia", 5);
+		//insertExample("Olá da Rosânia!", 5);
 		
-		updateExample("E aí pessoal?", 5);
+		//updateExample("E aí pessoal?", 5);
+		//updateExample("Tudo bem?", 4);
 	}
 	
 	public static void selectExample(){
@@ -95,7 +96,7 @@ public class JDBCTest {
 		}
 	}
 
-	private static void deleteExample() {
+	private static void deleteExample(int userId) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		
