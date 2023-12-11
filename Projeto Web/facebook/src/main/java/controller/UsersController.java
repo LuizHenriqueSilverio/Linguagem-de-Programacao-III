@@ -16,7 +16,7 @@ import model.dao.DAOFactory;
 import model.dao.UserDAO;
 
 //Rotas
-@WebServlet(urlPatterns = {""})
+@WebServlet(urlPatterns = {"", "/save"})
 public class UsersController extends HttpServlet{
 	
 	@Override
