@@ -25,7 +25,7 @@ public class UsersController extends HttpServlet{
 		String uri = req.getRequestURI();
 		
 		switch (uri) {
-			case "/facebook/":
+			case "/facebook/": {
 				
 				//Carregar usuários do BD
 				loadUsers(req);
@@ -35,10 +35,41 @@ public class UsersController extends HttpServlet{
 				rd.forward(req, resp);
 				
 				break;
-	
+			}
+			
+			case "/facebook/save": {
+				insertUser(req);
+				resp.sendRedirect("/facebook");
+				
+				break;
+			}
 			default:
 				PrintWriter writer = resp.getWriter();
 				writer.append("404 recurso não encontrado: " + uri);
+				break;
+		}
+	}
+
+	private void insertUser(HttpServletRequest req) {
+		// Pegar os dados do formulário
+		String name = req.getParameter("user-name");
+		String gender = req.getParameter("user-gender");
+		String email = req.getParameter("email");
+		
+		// Criar um objeto do tipo User e setar os dados
+		User user = new User();
+		user.setName(name);
+		user.setGender(gender);
+		user.setEmail(email);
+		
+		// Criar um DAO e salvar o objeto
+		UserDAO dao = DAOFactory.createDAO(UserDAO.class);
+		
+		try {
+			dao.save(user);
+		} catch (ModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
