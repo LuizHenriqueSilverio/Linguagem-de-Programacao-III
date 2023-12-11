@@ -39,10 +39,8 @@
 						</c:forEach>
 					</tbody>
 				  </table>
-
-				  <a href="form_user.html" class="btn btn-primary">Novo Usuário</a>
 			</div>
-
+			<a href="form_user.html" class="btn btn-primary">Novo Usuário</a>
 		</main>
 
 		<script src="js/bootstrap.min.js"></script>
