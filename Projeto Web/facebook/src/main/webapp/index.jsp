@@ -1,3 +1,5 @@
+<jsp:directive.page contentType="text/html; charset=UTF-8" />
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	
@@ -27,26 +29,18 @@
 					  	</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Emerson</td>
-							<td>M</td>
-							<td>emerson@mail.com</td>
-					  	</tr>
-					  	<tr>
-							<td>2</td>
-							<td>Luiz Henrique</td>
-							<td>M</td>
-							<td>luiz@mail.com</td>
-					  	</tr>
-						  <tr>
-							<td>3</td>
-							<td>Aryane</td>
-							<td>F</td>
-							<td>aryane@mail.com</td>
-					  	</tr>
-						</tbody>
+						<c:forEach var="user" items="${usuarios}">
+							<tr>
+								<td>${user.getId()}</td>
+								<td>${user.getName()}</td>
+								<td>${user.getGender()}</td>
+								<td>${user.getEmail()}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
 				  </table>
+
+				  <a href="form_user.html" class="btn btn-primary">Novo Usuário</a>
 			</div>
 
 		</main>
