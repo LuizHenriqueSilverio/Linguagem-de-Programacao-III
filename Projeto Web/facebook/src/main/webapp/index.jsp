@@ -37,7 +37,7 @@
 								<td>${user.getGender()}</td>
 								<td>${user.getEmail()}</td>
 								<td>
-									<a href="${pageContext.request.contextPath}/user/update?userId=${user.getId()}" class="bi bi-square-pencil"></a>
+									<a href="${pageContext.request.contextPath}/user/update?userId=${user.getId()}" class="bi bi-pencil-square"></a>
 								</td>
 							</tr>
 						</c:forEach>
