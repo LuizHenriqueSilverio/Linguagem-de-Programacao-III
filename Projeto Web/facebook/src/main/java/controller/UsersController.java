@@ -16,7 +16,7 @@ import model.dao.DAOFactory;
 import model.dao.UserDAO;
 
 //Rotas
-@WebServlet(urlPatterns = {"", "/save"})
+@WebServlet(urlPatterns = {"", "/save", "/user/update"})
 public class UsersController extends HttpServlet{
 	
 	@Override
@@ -43,11 +43,48 @@ public class UsersController extends HttpServlet{
 				
 				break;
 			}
+			
+			case "/user/update": {
+				
+				loadUser(req);
+				
+				// Direcionar a chamada para a form_user.jsp
+				RequestDispatcher rd = req.getRequestDispatcher("form_user.jsp");
+				rd.forward(req, resp);
+				
+				break;
+			}
+			
 			default:
 				PrintWriter writer = resp.getWriter();
 				writer.append("404 recurso não encontrado: " + uri);
 				break;
 		}
+	}
+
+	private void loadUser(HttpServletRequest req) {
+		// Recuperar o id do usuário da URI
+		
+		String idUserStr = req.getParameter("userId");
+		
+		int userId = idUserStr != null ? Integer.parseInt(idUserStr) : 0;
+		
+		// Carregar o usuário do banco
+		UserDAO dao = DAOFactory.createDAO(UserDAO.class);
+		
+		User user = null;
+		
+		try {
+			user = dao.findById(userId);
+		} catch (ModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// Colocar o usuário no contexto
+		
+		req.setAttribute("usuario", user);
+		
 	}
 
 	private void insertUser(HttpServletRequest req) {

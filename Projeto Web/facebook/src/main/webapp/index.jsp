@@ -26,6 +26,7 @@
 							<th scope="col">Nome</th>
 							<th scope="col">Sexo</th>
 							<th scope="col">Email</th>
+							<th scope="col">Ações</th>
 					  	</tr>
 					</thead>
 					<tbody>
@@ -35,6 +36,9 @@
 								<td>${user.getName()}</td>
 								<td>${user.getGender()}</td>
 								<td>${user.getEmail()}</td>
+								<td>
+									<a href="${pageContext.request.contextPath}/user/update?userId=${user.getId()}" class="bi bi-square-pencil"></a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
