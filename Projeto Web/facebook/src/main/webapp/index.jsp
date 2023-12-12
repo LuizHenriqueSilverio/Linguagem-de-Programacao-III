@@ -6,8 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Facebook Tabajara</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-icons.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-icons.css">
 	</head>
 	
 	<body>
@@ -44,11 +44,11 @@
 					</tbody>
 				  </table>
 			</div>
-			<a href="form_user.html" class="btn btn-primary">Novo Usuário</a>
+			<a href="form_user.jsp" class="btn btn-primary">Novo Usuário</a>
 		</main>
 
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
 	</body>
 	
 </html>
