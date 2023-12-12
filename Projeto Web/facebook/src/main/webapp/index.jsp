@@ -26,7 +26,8 @@
 							<th scope="col">Nome</th>
 							<th scope="col">Sexo</th>
 							<th scope="col">Email</th>
-							<th scope="col">Ações</th>
+							<th scope="col">Editar</th>
+							<th scope="col">Excluir</th>
 					  	</tr>
 					</thead>
 					<tbody>
@@ -38,6 +39,9 @@
 								<td>${user.getEmail()}</td>
 								<td>
 									<a href="${pageContext.request.contextPath}/user/update?userId=${user.getId()}" class="bi bi-pencil-square"></a>
+								</td>
+								<td>
+									<a href="${pageContext.request.contextPath}/user/delete?userId=${user.getId()}" class="bi bi-trash"></a>
 								</td>
 							</tr>
 						</c:forEach>
